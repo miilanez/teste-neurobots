@@ -17,7 +17,6 @@ function App() {
       .then((res) => res.json())
       .then((json) => {
         const { url, login, name, avatar_url, bio } = json
-        console.log(name)
         const lista = listUsers
         lista.push({ url, login, name, avatar_url, bio })
         setListUsers(lista)
