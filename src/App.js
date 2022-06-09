@@ -33,18 +33,18 @@ function App() {
         <input type="text" placeholder='Digite o nome do usuário' onChange={(e) => setUsername(e.target.value)} value={username} />
         <button className='searchButton' onClick={handleClick}> Pesquisar </button>
       </div>
-
+      
+      <div className='container-principal'>
       {
         listUsers.map(user => (
           <CardUser info={user} />
         )
         )
       }
+      </div>
 
-
-
-      <div>
-        <h1>contagem de cards: {count}</h1>
+      <div className='contador'>
+        <p>{count} card(s) adicionado(s)</p>
       </div>
     </div>
   );
