@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Header from "./components/Header";
 import './App.css';
-import Api from './components/Api';
 import CardUser from './components/CardUser';
 
 function App() {
@@ -10,7 +9,6 @@ function App() {
   const [count, setCount] = useState([])//state3
 
   useEffect(() => {
-    console.log("alterou ")
     setCount(listUsers.length)
   }, [listUsers])
 
@@ -18,10 +16,10 @@ function App() {
     fetch(`https://api.github.com/users/${username}`)
       .then((res) => res.json())
       .then((json) => {
-        const { url, name, avatar_url, bio } = json
+        const { url, login, name, avatar_url, bio } = json
         console.log(name)
         const lista = listUsers
-        lista.push({ url, name, avatar_url, bio })
+        lista.push({ url, login, name, avatar_url, bio })
         setListUsers(lista)
         setCount(listUsers.length)
       })
@@ -36,13 +34,13 @@ function App() {
         <button className='searchButton' onClick={handleClick}> Pesquisar </button>
       </div>
 
-{
-  listUsers.map(user => (
-    <CardUser info={user} />
-  )
-  )
-}
-      
+      {
+        listUsers.map(user => (
+          <CardUser info={user} />
+        )
+        )
+      }
+
 
 
       <div>
