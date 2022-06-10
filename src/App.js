@@ -16,9 +16,9 @@ function App() {
     fetch(`https://api.github.com/users/${username}`)
       .then((res) => res.json())
       .then((json) => {
-        const { url, login, name, avatar_url, bio } = json
+        const { html_url, login, name, avatar_url, bio } = json
         const lista = listUsers
-        lista.push({ url, login, name, avatar_url, bio })
+        lista.push({ html_url, login, name, avatar_url, bio })
         setListUsers(lista)
         setCount(listUsers.length)
       })
