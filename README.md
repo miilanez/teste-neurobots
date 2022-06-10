@@ -1,11 +1,11 @@
-# React + Pesquisa no API Github
+# Pesquisa no API Github com React
 
 ## Vamos Começar
 
 Primeiro, clone o repositório
 
 ```
-$ git remote add origin https://github.com/miilanez/Github-Research-v1.git
+$ git remote add origin https://github.com/miilanez/teste-neurobots.git
 ```
 
 Depois, carregue as dependências
